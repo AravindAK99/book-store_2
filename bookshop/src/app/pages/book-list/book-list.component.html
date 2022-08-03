@@ -1,0 +1,42 @@
+<div class="bg-image" style="background-image: url('https://cdn.wallpapersafari.com/21/8/M7fdoJ.jpg');height:max-content;width: 100%;">
+
+<div class="container">
+    <div class="col-lg-12 row">
+    <div class="row d-flex justify-content-between align-items-center col-lg-8">
+        <h2 class="h2" style="color: white;">Book List</h2><br><br><br><br>
+
+    </div>
+    <div class="col-lg-2 d-flex justify-content-between align-items-center "><a routerLink="/add-book" class="nav-link link11"><h2>Add Books</h2> </a></div>
+    <div class="col-lg-2 d-flex justify-content-between align-items-center"><a routerLink="" class="nav-link link11"><h2>Log Out</h2> </a></div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th scope="col" class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let book of Books; let i = index">
+                    <th scope="row">{{book._id}}</th>
+                    <td>{{book.name}}</td>
+                    <td>{{book.price}}</td>
+                    <td>{{book.description}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-primary " routerLink="/edit-books/{{book._id}}">Edit</button>
+                        <button class="btn btn-danger m-3" (click)="delete(book._id,1)">Delete</button>
+                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</div>
